@@ -1,4 +1,3 @@
-from __future__ import print_function
 import win32gui
 import sys
 import ctypes
@@ -60,7 +59,7 @@ class Relocator(object):
             win32gui.MoveWindow(hwnd, 0, 0, width, height, True)
             print("Moved 0x%X from (%d, %d) to (0, 0)" % (hwnd, top, left))
             self.numRelocatedWindows += 1
-        except Exception, e:
+        except Exception as e:
             errorText = "Error moving 0x%X ('%s'): %s" % (hwnd, win32gui.GetWindowText(hwnd), str(e))
             self.errors.append(errorText)
             print(errorText)
